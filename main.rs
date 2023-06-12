@@ -22,27 +22,7 @@ fn main() -> Result<()> {
     ///////////////////////////////
     //  Startup hook: run before entering the main event loop
     let startup_hook = SpawnOnStartup::boxed("/home/sergiu/scripts/alpha/gwm_start.sh");
-    // //  Managed hook: run after each new window becomes managed by the window manager
-    // //  * fix firefox dialog windows
-    // let firefox_confirm_override = (Title(""), FloatingCentered::new(0.1, 0.1));
-    // let firefox_download = (
-    //     Title("Enter name of file to save to…"),
-    //     FloatingCentered::new(0.3, 0.3),
-    // );
-    // let firefox_save_image = (Title("Save Image"), FloatingCentered::new(0.3, 0.3));
-    // let firefox_file_upload = (Title("File Upload"), FloatingCentered::new(0.5, 0.7));
-    // let firefox_file_save_to = (
-    //     Title("Enter name of file to save to…"),
-    //     FloatingCentered::new(0.3, 0.3),
-    // );
-
-    // let manage_hooks =
-    //     Some(Box::new(firefox_save_image).then_boxed(
-    //         Box::new(firefox_confirm_override).then_boxed(Box::new(firefox_download).then_boxed(
-    //             Box::new(firefox_file_upload).then_boxed(Box::new(firefox_file_save_to)),
-    //         )),
-    //     ));
-
+   
     ////////////////////////////////
     //         SCRATCHPADS        //
     ///////////////////////////////
