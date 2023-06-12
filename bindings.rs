@@ -11,7 +11,7 @@ use std::collections::HashMap;
 
 pub fn raw_key_bindings(
     terminal: ToggleNamedScratchPad,
-    gpass: ToggleNamedScratchPad,
+    ranger: ToggleNamedScratchPad,
     // exit_menu: ToggleNamedScratchPad,
 ) -> HashMap<String, KeyHandler> {
     let mut raw_bindings = map! {
@@ -44,7 +44,7 @@ pub fn raw_key_bindings(
          "A-Return" => spawn("st"),
 
          "A-g" => Box::new(terminal),
-         "A-p" => Box::new(gpass),
+         "A-p" => Box::new(ranger),
          // "A-x" => Box::new(exit_menu),
 
          // System control
