@@ -40,7 +40,15 @@ fn main() -> Result<()> {
         FloatingCentered::new(0.5, 0.5),
         true,
     );
-    let scratchpads = vec![spt, spr];
+       let (spe, exit_menu) = NamedScratchPad::new(
+        "exit_menu",
+        "st -c Exit_Menu -e exit_menu",
+        ClassName("Exit_Menu"),
+        FloatingCentered::new(0.3, 0.3),
+        true,
+    );
+
+    let scratchpads = vec![spt, spr, spe];
 
     ////////////////////////////////
     //           LAYOUTS          //
@@ -67,7 +75,7 @@ fn main() -> Result<()> {
 
     let conn = RustConn::new()?;
     let key_bindings =
-        parse_keybindings_with_xmodmap(bindings::raw_key_bindings(terminal, ranger))?;
+        parse_keybindings_with_xmodmap(bindings::raw_key_bindings(terminal, ranger, exit_menu))?;
 
     let wm = WindowManager::new(config, key_bindings, HashMap::new(), conn)?;
 
