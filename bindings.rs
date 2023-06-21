@@ -12,7 +12,7 @@ use std::collections::HashMap;
 pub fn raw_key_bindings(
     terminal: ToggleNamedScratchPad,
     ranger: ToggleNamedScratchPad,
-    // exit_menu: ToggleNamedScratchPad,
+    exit_menu: ToggleNamedScratchPad,
 ) -> HashMap<String, KeyHandler> {
     let mut raw_bindings = map! {
          map_keys: |k: &str| k.to_string();
@@ -45,7 +45,7 @@ pub fn raw_key_bindings(
 
          "A-g" => Box::new(terminal),
          "A-p" => Box::new(ranger),
-         // "A-x" => Box::new(exit_menu),
+         "A-x" => Box::new(exit_menu),
 
          // System control
          "XF86AudioLowerVolume" => spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"),
